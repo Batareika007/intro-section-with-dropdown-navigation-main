@@ -1,0 +1,8 @@
+@import "mixins";
+@import "normalize";
+@import 'global';
+
+
+.container {
+  @include container(1440px, 1.5%)
+}
