@@ -1,8 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
 @import "mixins";
 @import "normalize";
 @import 'global';
+@import 'colors';
 
+body{
+  overflow-x: hidden;
+  font-size: 18px;
+  background-color: $white;
+  color: $gray;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
 
 .container {
-  @include container(1440px, 1.5%)
+  @include container(1440px, 1.5%);
 }
+
+.header{
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+}
+
+.logo{
+  position: relative;
+  margin-right: 40px;
+  top: 7px;
+}
+
+.nav{
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  &__container{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }  
+}
+
+.dropdown{
+  position: relative;
+  &-title{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  &-list{
+    width: max-content;
+    position: absolute;
+    top: 3rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 16px;
+    background-color: white;
+    li{
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  &:first-child{
+    .dropdown-list{
+      left: unset;
+      right:  0;
+    }
+  }
+  
+}
+
+
+
+
+@media screen and (max-width:1124px) {
+  .nav{
+    width: auto;
+    padding: 4rem 2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    &__container{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+  .dropdown{
+    &-list{
+      background: none;
+      position: initial;
+      left: 1rem;
+    }
+  }
+}
+
+
