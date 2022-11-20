@@ -16,10 +16,10 @@ menu.addEventListener('click', function () {
 	this.classList.toggle('menu_active')
 	if (menu.classList.contains('menu_active')) {
         body.classList.add('dim')
-        nav.style.animation="menuOpen 0.6s ease-in-out forwards";
+        nav.style.animation="menuOpen 0.5s ease-in-out forwards";
 	} else {
         body.classList.remove('dim')
-        nav.style.animation="menuClose 0.6s ease-in-out";
+        nav.style.animation="menuClose 0.5s ease-in-out";
 	}
 })
 

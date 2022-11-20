@@ -445,20 +445,23 @@ body {
   background: hsl(0deg, 0%, 98%);
   color: hsl(0deg, 0%, 41%);
   font-family: "Plus Jakarta Sans", sans-serif;
-  -webkit-transition: background-color 0.3s ease-out;
-  transition: background-color 0.3s ease-out;
 }
-body.dim {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-body.dim:after {
+body::after {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   content: "";
-  top: 0;
-  left: 0;
-  overflow: hidden;
   position: absolute;
+  top: 0;
+  left: 100%;
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+body.dim {
+  overflow: hidden;
+}
+body.dim::after {
+  left: 0;
 }
 
 .container {
@@ -479,9 +482,13 @@ body.dim:after {
 }
 
 .logo {
+  min-width: 84px;
   position: relative;
   margin-right: 40px;
-  top: 7px;
+}
+.logo img {
+  position: relative;
+  top: 5px;
 }
 
 .nav {
@@ -559,20 +566,18 @@ body.dim:after {
   stroke: hsl(0deg, 0%, 8%);
 }
 .dropdown-title svg {
-  -webkit-transition: -webkit-transform ease 0.5s;
-  transition: -webkit-transform ease 0.5s;
-  transition: transform ease 0.5s;
-  transition: transform ease 0.5s, -webkit-transform ease 0.5s;
+  -webkit-transition: -webkit-transform ease 0.9s;
+  transition: -webkit-transform ease 0.9s;
+  transition: transform ease 0.9s;
+  transition: transform ease 0.9s, -webkit-transform ease 0.9s;
 }
 .dropdown-title.open svg {
-  -webkit-transform: rotate3d(1, 0, 0, 180deg);
-          transform: rotate3d(1, 0, 0, 180deg);
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
 }
 .dropdown-list {
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
-  -webkit-transform: scale(0.1);
-          transform: scale(0.1);
   overflow: hidden;
   pointer-events: none;
   opacity: 0;
@@ -584,8 +589,8 @@ body.dim:after {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  top: 0rem;
   position: absolute;
-  top: 3rem;
   padding: 1.5rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -598,8 +603,7 @@ body.dim:after {
 .dropdown-list.open {
   opacity: 1;
   pointer-events: all;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  top: 3rem;
 }
 .dropdown-list li {
   cursor: pointer;
@@ -640,11 +644,82 @@ body.dim:after {
   display: none;
 }
 
+.main {
+  margin: 3rem 0;
+}
+.main__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 2rem;
+}
+
+.content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 520px;
+          flex: 0 1 520px;
+}
+.content__header {
+  color: hsl(0deg, 0%, 8%);
+  font-size: 5.1rem;
+  margin-bottom: 70px;
+}
+.content__text {
+  line-height: 150%;
+  margin-bottom: 60px;
+  max-width: 430px;
+}
+.content__btn {
+  font-weight: 700;
+  color: hsl(0deg, 0%, 98%);
+  background-color: hsl(0deg, 0%, 8%);
+  border-radius: 16px;
+  height: 56px;
+  width: 162px;
+  margin-bottom: 100px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.content__btn:hover {
+  border: 2px solid hsl(0deg, 0%, 8%);
+  color: hsl(0deg, 0%, 8%);
+  background: transparent;
+}
+.content__comanies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bg-ilustration {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 480px;
+          flex: 0 1 480px;
+  background: url("/images/image-hero-desktop.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+footer {
+  padding-bottom: 2rem;
+}
+
 @media screen and (max-width: 768px) {
   .header {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    padding-bottom: 0;
   }
   .nav {
     height: 100%;
@@ -679,9 +754,6 @@ body.dim:after {
     0% {
       right: -60%;
     }
-    70% {
-      right: 3rem;
-    }
     100% {
       right: 0;
     }
@@ -689,9 +761,6 @@ body.dim:after {
   @keyframes menuOpen {
     0% {
       right: -60%;
-    }
-    70% {
-      right: 3rem;
     }
     100% {
       right: 0;
@@ -701,9 +770,6 @@ body.dim:after {
     0% {
       right: 0;
     }
-    30% {
-      right: 3rem;
-    }
     100% {
       right: -60%;
     }
@@ -711,9 +777,6 @@ body.dim:after {
   @keyframes menuClose {
     0% {
       right: 0;
-    }
-    30% {
-      right: 3rem;
     }
     100% {
       right: -60%;
@@ -738,5 +801,65 @@ body.dim:after {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .main {
+    margin-top: 0;
+  }
+  .main .container {
+    padding: 0;
+  }
+  .main__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 0;
+  }
+  .content {
+    padding: 0 1.5%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .content__header {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: calc(5vw + 1rem);
+  }
+  .content__text {
+    margin-bottom: 2rem;
+  }
+  .content__btn {
+    margin-bottom: 2rem;
+  }
+  .content__comanies {
+    width: 100%;
+    gap: 1rem;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .content__comanies img {
+    max-width: 20%;
+  }
+  .bg-ilustration {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 80vw;
+            flex: 0 1 80vw;
+    background: url(/images/image-hero-mobile.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
