@@ -32,63 +32,109 @@
 			<div class="container">
 				<div class="header">
 					<!-- logo -->
-					<a href="index.html" class="logo"><img src="images/logo.svg" alt=""></a>
+					<a href="index.html" class="logo"
+						><img src="images/logo.svg" alt=""
+					/></a>
 					<!-- nav -->
-					<nav class="nav">
+					<nav class="nav close">
 						<div class="nav__container">
 							<div class="dropdown">
-							<div class="dropdown-title"> <span>Features</span><svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/></svg> </div>
-							<ul class="dropdown-list">
-								<li>
-									<img
-										src="images/icon-todo.svg"
-										alt="todo" />
-									Todo List
-								</li>
-								<li>
-									<img
-										src="images/icon-calendar.svg"
-										alt="Calendar" /> <span> Calendar</span>
-								</li>
-								<li>
-									<img
-										src="images/icon-reminders.svg"
-										alt="Reminders" /><span>Reminders</span>
-								</li>
-								<li>
-									<img
-										src="images/icon-planning.svg"
-										alt="Planning" /><span>Planning</span>
-								</li>
-							</ul>
+								<div class="dropdown-title">
+									<span>Features</span
+									><svg
+										width="10"
+										height="6"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											stroke="#686868"
+											stroke-width="1.5"
+											fill="none"
+											d="m1 5 4-4 4 4" />
+									</svg>
+								</div>
+								
+									<ul class="dropdown-list">
+										<li>
+											<img
+												src="images/icon-todo.svg"
+												alt="todo" />
+											Todo List
+										</li>
+										<li>
+											<img
+												src="images/icon-calendar.svg"
+												alt="Calendar" />
+											<span> Calendar</span>
+										</li>
+										<li>
+											<img
+												src="images/icon-reminders.svg"
+												alt="Reminders" /><span
+												>Reminders</span
+											>
+										</li>
+										<li>
+											<img
+												src="images/icon-planning.svg"
+												alt="Planning" /><span
+												>Planning</span
+											>
+										</li>
+									</ul>
+								
 							</div>
 							<div class="dropdown">
-
-							<div class="dropdown-title"><span>Company</span><svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/></svg></div>
-
-							<ul class="dropdown-list">
-								<li>History</li>
-								<li>Our Team</li>
-								<li>Blog</li>
-							</ul>
-						</div>
+								<div class="dropdown-title">
+									<span>Company</span
+									><svg
+										width="10"
+										height="6"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											stroke="#686868"
+											stroke-width="1.5"
+											fill="none"
+											d="m1 5 4-4 4 4" />
+									</svg>
+								</div>
+								
+									<ul class="dropdown-list">
+										<li>History</li>
+										<li>Our Team</li>
+										<li>Blog</li>
+									</ul>
+								
+							</div>
 							<div class="nav__link">Careers</div>
 							<div class="nav__link">About</div>
 						</div>
 
 						<div class="nav__container">
 							<div class="nav__link">Login</div>
-							<button class="nav__link">Register</button>
+							<button class="nav__link btn">Register</button>
 						</div>
 					</nav>
+					<!-- menu btn -->
+					<div class="menu">
+						<img
+							class="menu__btn menu_open"
+							src="images/icon-menu.svg"
+							alt="menu" />
+						<img
+							class="menu__btn menu_close"
+							src="images/icon-close-menu.svg"
+							alt="menu close" />
+					</div>
 				</div>
 			</div>
 		</header>
+		<!-- TODO -->
 		<div style="display: none">
 			Make remote work Get your team in sync, no matter your location.
 			Streamline processes, create team rituals, and watch productivity
 			soar. Learn more
 		</div>
+		<!-- TODO -->
 
 		<footer class="attribution">
 			Challenge by
@@ -96,11 +142,8 @@
 				href="https://www.frontendmentor.io?ref=challenge"
 				target="_blank"
 				>Frontend Mentor</a
-			>. Coded by <a href="#">Your Name Here</a>.
+			>. Coded by <a href="#">Alexei</a>.
 		</footer>
-		<script>
-			const header = document.querySelector('header')
-			console.log(header.clientWidth)
-		</script>
+		<script src="js/script.js"></script>
 	</body>
 </html>
