@@ -617,6 +617,9 @@ body.dim::after {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
+.dropdown-list li img {
+  width: 16px;
+}
 .dropdown-list li:hover {
   color: hsl(0deg, 0%, 8%);
 }
@@ -704,7 +707,7 @@ body.dim::after {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 480px;
           flex: 0 1 480px;
-  background: url("/images/image-hero-desktop.png");
+  background: url("../images/image-hero-desktop.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
@@ -793,8 +796,8 @@ footer {
     padding: 0;
   }
   .dropdown-list.open {
-    height: auto;
     padding: 1.5rem;
+    height: auto;
     max-height: 500px;
   }
   .menu {
@@ -852,12 +855,13 @@ footer {
   }
   .content__comanies img {
     max-width: 20%;
+    height: 100%;
   }
   .bg-ilustration {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 80vw;
             flex: 0 1 80vw;
-    background: url(/images/image-hero-mobile.png);
+    background: url("../images/image-hero-mobile.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

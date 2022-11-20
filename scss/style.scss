@@ -140,6 +140,9 @@ body {
 			align-items: center;
 			gap: 1rem;
 			transition: color 0.3s;
+      img{
+        width: 16px;
+      }
 			&:hover {
 				color: $black;
 			}
@@ -217,7 +220,7 @@ body {
 }
 .bg-ilustration {
 	flex: 0 1 480px;
-	background: url('/images/image-hero-desktop.png');
+	background: url('../images/image-hero-desktop.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: top center;
@@ -284,8 +287,8 @@ footer {
 			overflow: 0;
 			padding: 0;
 			&.open {
-				height: auto;
 				padding: 1.5rem;
+				height: auto;
 				max-height: 500px;
 			}
 		}
@@ -332,13 +335,14 @@ footer {
 			justify-content: space-around;
 			img {
 				max-width: 20%;
+        height: 100%;
 			}
 		}
 	}
 
 	.bg-ilustration {
 		flex: 0 1 80vw;
-		background: url(/images/image-hero-mobile.png);
+		background: url('../images/image-hero-mobile.png');
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
