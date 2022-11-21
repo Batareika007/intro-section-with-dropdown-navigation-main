@@ -439,14 +439,11 @@ button {
   pointer-events: none;
 }
 
-body {
+.wrapper {
+  position: relative;
   overflow-x: hidden;
-  font-size: 18px;
-  background: hsl(0deg, 0%, 98%);
-  color: hsl(0deg, 0%, 41%);
-  font-family: "Plus Jakarta Sans", sans-serif;
 }
-body::after {
+.wrapper::after {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   content: "";
@@ -457,11 +454,18 @@ body::after {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
 }
-body.dim {
+.wrapper.dim {
   overflow: hidden;
 }
-body.dim::after {
+.wrapper.dim::after {
   left: 0;
+}
+
+body {
+  font-size: 18px;
+  background: hsl(0deg, 0%, 98%);
+  color: hsl(0deg, 0%, 41%);
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .container {
