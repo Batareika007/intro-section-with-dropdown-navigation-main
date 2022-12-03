@@ -20,6 +20,7 @@
 	  }
 	  &.dim {
 		overflow: hidden;
+		height: 100%;
 		&::after{
 		  left: 0;
 		  

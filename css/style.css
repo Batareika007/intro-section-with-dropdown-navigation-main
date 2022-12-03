@@ -457,6 +457,7 @@ button {
 }
 .wrapper.dim {
   overflow: hidden;
+  height: 100%;
 }
 .wrapper.dim::after {
   left: 0;
